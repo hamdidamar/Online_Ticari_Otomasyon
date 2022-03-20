@@ -1,0 +1,32 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:16px; margin-left:16px; margin-right:16px">
+    <thead>
+        <tr>
+            <th class="col-lg-1">Id</th>
+            <th>Name</th>
+            <th class="col-lg-1">Edit</th>
+            <th class="col-lg-1">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.CategoryId</td>
+           
+                <td>@c.Name</td>
+                <td><a href="/Category/Update/@c.CategoryId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Category/Delete/@c.CategoryId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<a href="/Category/Add" class="btn btn-primary" style="margin-left:16px"> Yeni Kategori</a>
