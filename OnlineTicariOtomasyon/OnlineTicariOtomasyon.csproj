@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +145,7 @@
     <Compile Include="Models\Classes\InvoiceRow.cs" />
     <Compile Include="Models\Classes\Order.cs" />
     <Compile Include="Models\Classes\Product.cs" />
+    <Compile Include="Models\Helpers\DropdownHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -269,6 +271,9 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Add.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,7 +18,8 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public string PhotoPath { get; set; } // ileride fotoğraflar sınıfı ile güncellenecek
         public bool IsActive { get; set; }
 
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

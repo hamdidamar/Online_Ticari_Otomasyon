@@ -1,0 +1,47 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Product
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Ürün Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("Update", "Product", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ProductId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Brand)
+        @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Stock)
+        @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.PurchasePrice)
+        @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.SalePrice)
+        @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Category)
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.PhotoPath)
+        @Html.TextBoxFor(x => x.PhotoPath, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(x => x.IsActive)
+        @Html.LabelFor(x => x.IsActive)
+    </div>
+    <button class="btn btn-warning">Kaydet</button>
+}
