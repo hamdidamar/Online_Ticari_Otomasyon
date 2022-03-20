@@ -15,6 +15,7 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public string PhotoPath { get; set; } // ileride fotoğraflar sınıfı gelince değişecek
         public bool IsActive { get; set; }
 
+        public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
         public ICollection<Order> Orders { get; set; }
     }

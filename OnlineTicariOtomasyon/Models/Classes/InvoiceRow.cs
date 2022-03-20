@@ -16,6 +16,7 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public decimal Total { get; set; }
         public bool IsActive { get; set; }
 
+        public int InvoiceId { get; set; }
         public virtual Invoice Invoice { get; set; }
     }
 }

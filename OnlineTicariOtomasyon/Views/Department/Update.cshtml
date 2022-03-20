@@ -1,0 +1,24 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Department
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Departman Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("Update", "Department", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.DepartmentId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(x => x.IsActive)
+        @Html.LabelFor(x => x.IsActive)
+    </div>
+    <button class="btn btn-warning">Kaydet</button>
+}

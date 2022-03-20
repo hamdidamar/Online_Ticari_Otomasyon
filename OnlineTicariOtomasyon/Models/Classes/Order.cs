@@ -16,8 +16,11 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public decimal Total { get; set; }
         public bool IsActive { get; set; }
 
+        public int ProductId { get; set; }
         public virtual Product Product { get; set; }
+        public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
+        public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
     }
 }
