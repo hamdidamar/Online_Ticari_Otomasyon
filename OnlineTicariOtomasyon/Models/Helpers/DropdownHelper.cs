@@ -36,5 +36,25 @@ namespace OnlineTicariOtomasyon.Models.Helpers
 
         }
 
+        public List<SelectListItem> GetDepartments(Expression<Func<Department, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                return (from x in ctx.Departments.Where(filter).Where(x => x.IsActive).ToList()
+                        select new SelectListItem
+                        {
+                            Text = x.Name,
+                            Value = x.DepartmentId.ToString()
+                        }).ToList();
+            }
+            return (from x in ctx.Departments.Where(x => x.IsActive).ToList()
+                    select new SelectListItem
+                    {
+                        Text = x.Name,
+                        Value = x.DepartmentId.ToString()
+                    }).ToList();
+
+        }
+
     }
 }

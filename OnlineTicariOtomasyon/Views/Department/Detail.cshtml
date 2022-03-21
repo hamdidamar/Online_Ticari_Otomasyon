@@ -13,7 +13,7 @@
     <li class="breadcrumb-item active">@(ViewBag.department) Departmanı</li>
 </ol>
 
-<table class="table table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
             <th class="col-lg-1">Id</th>
@@ -21,9 +21,6 @@
             <th>Surname</th>
             <th>Photo</th>
             <th>Orders</th>
-            @*<th class="col-lg-1">Detail</th>
-            <th class="col-lg-1">Edit</th>
-            <th class="col-lg-1">Delete</th>*@
         </tr>
     </thead>
     <tbody>
@@ -36,9 +33,6 @@
             <td>@e.Surname</td>
             <td>@e.PhotoPath</td>
             <td><a href="/Department/EmployeeOrders/@e.EmployeeId" class="btn btn-info">Satışlar</a></td>
-            @*<td><a href="/Department/Detail/@d.DepartmentId" class="btn btn-info">Detail</a></td>
-        <td><a href="/Department/Update/@d.DepartmentId" class="btn btn-warning">Güncelle</a></td>
-        <td><a href="/Department/Delete/@d.DepartmentId" class="btn btn-danger">Sil</a></td>*@
         </tr>
         }
 

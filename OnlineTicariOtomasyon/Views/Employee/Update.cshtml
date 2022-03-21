@@ -1,0 +1,36 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Employee
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Personel Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("Update", "Employee", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.EmployeeId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Surname)
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.PhotoPath)
+        @Html.TextBoxFor(x => x.PhotoPath, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Department)
+        @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.departments, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.CheckBoxFor(x => x.IsActive)
+        @Html.LabelFor(x => x.IsActive)
+    </div>
+    <button class="btn btn-warning">Kaydet</button>
+}
