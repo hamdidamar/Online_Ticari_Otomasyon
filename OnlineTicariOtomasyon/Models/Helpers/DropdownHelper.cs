@@ -56,5 +56,64 @@ namespace OnlineTicariOtomasyon.Models.Helpers
 
         }
 
+        public List<SelectListItem> GetProducts(Expression<Func<Product, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                return (from x in ctx.Products.Where(filter).Where(x => x.IsActive && x.Stock >0).ToList()
+                        select new SelectListItem
+                        {
+                            Text = x.Name,
+                            Value = x.ProductId.ToString()
+                        }).ToList();
+            }
+            return (from x in ctx.Products.Where(x => x.IsActive && x.Stock > 0).ToList()
+                    select new SelectListItem
+                    {
+                        Text = x.Name,
+                        Value = x.ProductId.ToString()
+                    }).ToList();
+
+        }
+
+        public List<SelectListItem> GetCustomers(Expression<Func<Customer, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                return (from x in ctx.Customers.Where(filter).Where(x => x.IsActive).ToList()
+                        select new SelectListItem
+                        {
+                            Text = x.Name + " "+x.Surname,
+                            Value = x.CustomerId.ToString()
+                        }).ToList();
+            }
+            return (from x in ctx.Customers.Where(x => x.IsActive).ToList()
+                    select new SelectListItem
+                    {
+                        Text = x.Name + " " + x.Surname,
+                        Value = x.CustomerId.ToString()
+                    }).ToList();
+
+        }
+
+        public List<SelectListItem> GetEmployees(Expression<Func<Employee, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                return (from x in ctx.Employees.Where(filter).Where(x => x.IsActive).ToList()
+                        select new SelectListItem
+                        {
+                            Text = x.Name + " " + x.Surname,
+                            Value = x.EmployeeId.ToString()
+                        }).ToList();
+            }
+            return (from x in ctx.Employees.Where(x => x.IsActive).ToList()
+                    select new SelectListItem
+                    {
+                        Text = x.Name + " " + x.Surname,
+                        Value = x.EmployeeId.ToString()
+                    }).ToList();
+
+        }
     }
 }

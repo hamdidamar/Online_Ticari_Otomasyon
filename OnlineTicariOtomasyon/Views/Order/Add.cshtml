@@ -1,0 +1,32 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Order
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Satış</h2>
+<br />
+
+<form class="form-group" method="post">
+    <br />
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.products, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Customer)
+    @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.customers, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.employees, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Satış Yap</button>
+</form>

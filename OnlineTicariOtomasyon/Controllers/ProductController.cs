@@ -67,5 +67,11 @@ namespace OnlineTicariOtomasyon.Controllers
             ctx.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult ProductExport()
+        {
+            var products = ctx.Products.Where(x => x.IsActive).ToList();
+            return View(products);
+        }
     }
 }

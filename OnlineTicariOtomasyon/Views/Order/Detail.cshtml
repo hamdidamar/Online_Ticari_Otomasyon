@@ -1,0 +1,49 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Order>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Satış Detayı</h2>
+<br />
+
+<a href="#" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yazdır</a>
+
+<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+    <thead>
+        <tr>
+            <th class="col-lg-1">Id</th>
+            <th>Product</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Employee</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.OrderId</td>
+                <td>@o.Product.Name</td>
+                <td>@o.Customer.Name  @o.Customer.Surname</td>
+                <td>@o.Amount</td>
+                <td>@o.Price</td>
+                <td>@o.Total</td>
+                <td>@o.Employee.Name  @o.Employee.Surname</td>
+                <td>@o.Date.ToShortDateString()</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
