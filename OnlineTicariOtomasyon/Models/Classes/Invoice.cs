@@ -14,9 +14,10 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public string RowNumber { get; set; }
         public DateTime Date { get; set; }
         public string TaxAdmin { get; set; } // vergi daireleri gelince değişecek
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
         public string Submitter { get; set; }
         public string Receiver { get; set; }
+        public decimal Total { get; set; }
         public bool IsActive { get; set; }
 
         public ICollection<InvoiceRow> InvoiceRows { get; set; }

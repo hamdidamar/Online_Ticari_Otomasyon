@@ -1,0 +1,41 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<InvoiceRow>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Detayı</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@(ViewBag.department) Departmanı</li>
+</ol>
+
+<a href="/Invoice/AddRow/@ViewBag.invoiceId" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Fatura Kalemi</a>
+
+<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+    <thead>
+        <tr>
+            <th class="col-lg-1">Id</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ir in Model)
+        {
+            <tr>
+                <td>@ir.InvoiceRowId</td>
+                <td>@ir.Description</td>
+                <td>@ir.Amount</td>
+                <td>@ir.UnitPrice</td>
+                <td>@ir.Total</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

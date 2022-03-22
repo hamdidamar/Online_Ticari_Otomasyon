@@ -1,0 +1,26 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.InvoiceRow
+@{
+    ViewBag.Title = "AddRow";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura Kalemi</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.HiddenFor(x=>x.InvoiceId)
+    @Html.LabelFor(x => x.Description)
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UnitPrice)
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

@@ -1,0 +1,45 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<a href="/Invoice/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Fatura</a>
+
+<table class="table  table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+    <thead>
+        <tr>
+            <th class="col-lg-1">Id</th>
+            <th>Serial Number</th>
+            <th>Row Number</th>
+            <th>Tax Admin</th>
+            <th>Date</th>
+            <th>Hour</th>
+            <th>Submitter</th>
+            <th>Receiver</th>
+            <th>Total</th>
+            <th class="col-lg-1">Detail</th>
+            <th class="col-lg-1">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.InvoiceId</td>
+            <td>@i.SerialNumber</td>
+            <td>@i.RowNumber</td>
+            <td>@i.TaxAdmin</td>
+            <td>@i.Date.ToShortDateString()</td>
+            <td>@i.Time</td>
+            <td>@i.Submitter</td>
+            <td>@i.Receiver</td>
+            <td>@i.Total</td>
+            <td><a href="/Invoice/Detail/@i.InvoiceId" class="btn btn-info">Detail</a></td>
+            <td><a href="/Invoice/Update/@i.InvoiceId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>

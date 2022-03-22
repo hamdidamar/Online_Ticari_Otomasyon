@@ -1,0 +1,48 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Invoice
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura</h2>
+<br />
+
+
+@using (Html.BeginForm("Update", "Invoice", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.InvoiceId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.SerialNumber)
+        @Html.TextBoxFor(x => x.SerialNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.RowNumber)
+        @Html.TextBoxFor(x => x.RowNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.TaxAdmin)
+        @Html.TextBoxFor(x => x.TaxAdmin, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Date)
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Time)
+        @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Submitter)
+        @Html.TextBoxFor(x => x.Submitter, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Receiver)
+        @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(x => x.IsActive)
+        @Html.LabelFor(x => x.IsActive)
+    </div>
+    <button class="btn btn-warning">Kaydet</button>
+}
