@@ -135,6 +135,7 @@
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +151,7 @@
     <Compile Include="Models\Classes\InvoiceRow.cs" />
     <Compile Include="Models\Classes\Order.cs" />
     <Compile Include="Models\Classes\Product.cs" />
+    <Compile Include="Models\Classes\StatisticCard.cs" />
     <Compile Include="Models\Helpers\DropdownHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -539,6 +541,7 @@
     <Content Include="Views\Invoice\Update.cshtml" />
     <Content Include="Views\Invoice\Detail.cshtml" />
     <Content Include="Views\Invoice\AddRow.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
