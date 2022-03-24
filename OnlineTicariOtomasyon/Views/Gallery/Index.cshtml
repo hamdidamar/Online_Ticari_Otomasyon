@@ -1,0 +1,84 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thumber &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/Content/theme/thumber/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/magnific-popup.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/jquery-ui.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/Content/theme/thumber/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="/Content/theme/thumber/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="/Content/theme/thumber/css/aos.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/fancybox.min.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/swiper.min.css">
+    <link rel="stylesheet" href="/Content/theme/thumber/css/style.css">
+
+</head>
+<body>
+
+    <br />
+    <div class="site-wrap">
+
+        
+        <main class="main-content">
+            <div class="container-fluid photos">
+                <div class="row align-items-stretch">
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <a href="@product.PhotoPath" class="d-block photo-item" data-fancybox="gallery">
+                                <img src="@product.PhotoPath" alt="Image" class="img-fluid">
+                                <div class="photo-text-more">
+                                    <span class="icon icon-search"></span>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+
+
+                </div>
+
+                
+            </div>
+        </main>
+
+    </div> <!-- .site-wrap -->
+
+    <script src="/Content/theme/thumber/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/theme/thumber/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/Content/theme/thumber/js/jquery-ui.js"></script>
+    <script src="/Content/theme/thumber/js/popper.min.js"></script>
+    <script src="/Content/theme/thumber/js/bootstrap.min.js"></script>
+    <script src="/Content/theme/thumber/js/owl.carousel.min.js"></script>
+    <script src="/Content/theme/thumber/js/jquery.countdown.min.js"></script>
+    <script src="/Content/theme/thumber/js/jquery.magnific-popup.min.js"></script>
+    <script src="/Content/theme/thumber/js/bootstrap-datepicker.min.js"></script>
+    <script src="/Content/theme/thumber/js/aos.js"></script>
+    <script src="/Content/theme/thumber/js/jquery.fancybox.min.js"></script>
+    <script src="/Content/theme/thumber/js/swiper.min.js"></script>
+    <script src="/Content/theme/thumber/js/jquery.scrollbar.js"></script>
+    <script src="/Content/theme/thumber/js/main.js"></script>
+
+
+
+</body>
+</html>
