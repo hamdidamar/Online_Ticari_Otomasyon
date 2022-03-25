@@ -18,6 +18,7 @@
             <th>Sale Price</th>
             <th>Category</th>
             <th>Photo</th>
+            <th class="col-lg-1">Detail</th>
             <th class="col-lg-1">Edit</th>
             <th class="col-lg-1">Delete</th>
         </tr>
@@ -27,18 +28,19 @@
         @foreach (var p in Model)
         {
 
-            <tr>
-                <td>@p.ProductId</td>
-                <td>@p.Name</td>
-                <td>@p.Brand</td>
-                <td>@p.Stock</td>
-                <td>@p.PurchasePrice</td>
-                <td>@p.SalePrice</td>
-                <td>@p.Category.Name</td>
-                <td>@p.PhotoPath</td>
-                <td><a href="/Product/Update/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="/Product/Delete/@p.ProductId" class="btn btn-danger">Sil</a></td>
-            </tr>
+        <tr>
+            <td>@p.ProductId</td>
+            <td>@p.Name</td>
+            <td>@p.Brand</td>
+            <td>@p.Stock</td>
+            <td>@p.PurchasePrice</td>
+            <td>@p.SalePrice</td>
+            <td>@p.Category.Name</td>
+            <td>@p.PhotoPath</td>
+            <td><a href="/ProductDetail/Index/@p.ProductId" class="btn btn-info">Detay</a></td>
+            <td><a href="/Product/Update/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Product/Delete/@p.ProductId" class="btn btn-danger">Sil</a></td>
+        </tr>
 
         }
 
