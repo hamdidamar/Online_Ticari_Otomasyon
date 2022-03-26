@@ -35,5 +35,10 @@ namespace OnlineTicariOtomasyon.Controllers
 
             return View(cards);
         }
+
+        public ActionResult SimpleTables()
+        {
+            return View();
+        }
     }
 }
