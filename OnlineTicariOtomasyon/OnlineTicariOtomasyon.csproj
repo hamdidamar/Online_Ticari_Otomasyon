@@ -149,6 +149,9 @@
     <Compile Include="Models\Classes\Context.cs" />
     <Compile Include="Models\Classes\Customer.cs" />
     <Compile Include="Models\Classes\Department.cs" />
+    <Compile Include="Models\Classes\DTO\CustomerCityGroup.cs" />
+    <Compile Include="Models\Classes\DTO\EmployeeDepatmentGroup.cs" />
+    <Compile Include="Models\Classes\DTO\ProductBrandGroup.cs" />
     <Compile Include="Models\Classes\Employee.cs" />
     <Compile Include="Models\Classes\Expense.cs" />
     <Compile Include="Models\Classes\Invoice.cs" />
@@ -2802,6 +2805,12 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Statistic\SimpleTables.cshtml" />
+    <Content Include="Views\Statistic\EmployeesByDepartment.cshtml" />
+    <Content Include="Views\Statistic\Customers.cshtml" />
+    <Content Include="Views\Statistic\Products.cshtml" />
+    <Content Include="Views\Statistic\ProductsByBrand.cshtml" />
+    <Content Include="Views\Statistic\CustomersByAddress.cshtml" />
+    <Content Include="Views\Statistic\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,72 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes.DTO
+@model IEnumerable<EmployeeDepatmentGroup>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Employees By Department</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Department</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 40px">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int row = 0; }
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@{row++;} @row</td>
+                        <td>@x.Department</td>
+                        <td>
+                            @if (x.Count <= 1)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-danger" style="width: @x.Count%"></div>
+                                </div>
+                            }
+                            @if (x.Count == 2)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: @x.Count%"></div>
+                                </div>
+                            }
+                            @if (x.Count >= 3)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-success" style="width: @x.Count%"></div>
+                                </div>
+                            }
+
+                        </td>
+
+                        <td>
+                            @if (x.Count <= 1)
+                            {
+                            <span class="badge bg-danger">@x.Count</span>
+                            }
+                            @if (x.Count == 2)
+                            {
+                        <span class="badge bg-warning">@x.Count</span>
+                            }
+                            @if (x.Count >= 3)
+                            {
+                        <span class="badge bg-success">@x.Count</span>
+                            }
+                        </td>
+                    </tr>
+                }
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

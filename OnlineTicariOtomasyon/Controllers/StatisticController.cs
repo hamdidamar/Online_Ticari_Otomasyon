@@ -1,4 +1,5 @@
 ﻿using OnlineTicariOtomasyon.Models.Classes;
+using OnlineTicariOtomasyon.Models.Classes.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace OnlineTicariOtomasyon.Controllers
         // GET: Statistic
         public ActionResult Index()
         {
-            var cards = new List<StatisticCard> 
+            var cards = new List<StatisticCard>
             {
                 new StatisticCard{Title="Ürün Sayısı",Value=ctx.Products.Where(x=>x.IsActive).Count().ToString(),Icon="",BackgroundColor="#cd84f1"},
                 new StatisticCard{Title="Müşteri Sayısı",Value=ctx.Customers.Where(x=>x.IsActive).Count().ToString(),Icon="",BackgroundColor="#d1d8e0"},
@@ -38,7 +39,66 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult SimpleTables()
         {
+            
             return View();
         }
+
+        public PartialViewResult CustomersByAddress()
+        {
+            var CustomersByAddress = ctx.Customers.Where(x => x.IsActive)
+                .GroupBy(x => x.Address)
+                .Select(y => new CustomerCityGroup
+                {
+                    City = y.Key,
+                    Count = y.Count()
+                }).ToList();
+            return PartialView(CustomersByAddress);
+        }
+
+        public PartialViewResult EmployeesByDepartment()
+        {
+            var EmployeesByDepartment = ctx.Employees.Where(x => x.IsActive)
+               .GroupBy(x => x.Department.Name)
+               .Select(y => new EmployeeDepatmentGroup
+               {
+                   Department = y.Key,
+                   Count = y.Count()
+               }).ToList();
+            return PartialView(EmployeesByDepartment);
+        }
+
+        public PartialViewResult ProductsByBrand()
+        {
+            var ProductsByBrand = ctx.Products.Where(x => x.IsActive)
+               .GroupBy(x => x.Brand)
+               .Select(y => new ProductBrandGroup
+               {
+                   Brand = y.Key,
+                   Count = y.Count()
+               }).ToList();
+            return PartialView(ProductsByBrand);
+        }
+
+        public PartialViewResult Customers()
+        {
+            var customers = ctx.Customers.Where(x => x.IsActive)
+             .ToList();
+            return PartialView(customers);
+        }
+
+        public PartialViewResult Products()
+        {
+            var products = ctx.Products.Where(x => x.IsActive)
+             .ToList();
+            return PartialView(products);
+        }
+
+        public PartialViewResult Categories()
+        {
+            var categories = ctx.Categories.Where(x => x.IsActive)
+             .ToList();
+            return PartialView(categories);
+        }
+
     }
 }
