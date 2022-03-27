@@ -2811,6 +2811,7 @@
     <Content Include="Views\Statistic\ProductsByBrand.cshtml" />
     <Content Include="Views\Statistic\CustomersByAddress.cshtml" />
     <Content Include="Views\Statistic\Categories.cshtml" />
+    <Content Include="Views\Employee\Employees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

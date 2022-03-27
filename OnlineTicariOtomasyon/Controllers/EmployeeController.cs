@@ -74,5 +74,11 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.employee = employee;
             return View(orders);
         }
+
+        public ActionResult Employees()
+        {
+            var employees = ctx.Employees.Where(x => x.IsActive).ToList();
+            return View(employees);
+        }
     }
 }
