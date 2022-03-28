@@ -36,7 +36,7 @@
             <td>@p.PurchasePrice</td>
             <td>@p.SalePrice</td>
             <td>@p.Category.Name</td>
-            <td>@p.PhotoPath</td>
+            <td><img src="@p.PhotoPath" style="max-height:50px" /></td>
             <td><a href="/ProductDetail/Index/@p.ProductId" class="btn btn-info">Detay</a></td>
             <td><a href="/Product/Update/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/Product/Delete/@p.ProductId" class="btn btn-danger">Sil</a></td>
