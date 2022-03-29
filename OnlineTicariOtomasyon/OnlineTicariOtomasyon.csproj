@@ -2831,6 +2831,7 @@
     <Content Include="Views\Employee\Employees.cshtml" />
     <Content Include="Views\Todo\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
