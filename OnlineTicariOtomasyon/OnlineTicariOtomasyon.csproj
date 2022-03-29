@@ -136,6 +136,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
@@ -2221,6 +2222,15 @@
     <Content Include="Content\theme\thumber\js\swiper.min.js" />
     <Content Include="Content\theme\thumber\js\typed.js" />
     <Content Include="Content\theme\thumber\photos.html" />
+    <Content Include="Content\theme\weblogin\css\font-awesome.css" />
+    <Content Include="Content\theme\weblogin\css\popup-box.css" />
+    <Content Include="Content\theme\weblogin\css\style.css" />
+    <Content Include="Content\theme\weblogin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\theme\weblogin\images\bg.jpg" />
+    <Content Include="Content\theme\weblogin\index.html" />
+    <Content Include="Content\theme\weblogin\js\jquery-2.1.4.min.js" />
+    <Content Include="Content\theme\weblogin\js\jquery.magnific-popup.js" />
+    <Content Include="Content\theme\weblogin\w3layouts-License.txt" />
     <Content Include="Content\theme\Web\dist\401.html" />
     <Content Include="Content\theme\Web\dist\404.html" />
     <Content Include="Content\theme\Web\dist\500.html" />
@@ -2672,6 +2682,11 @@
     <Content Include="Content\theme\AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="Content\theme\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Content\theme\AdminLTE-3.0.4\README.md" />
+    <Content Include="Content\theme\weblogin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\theme\weblogin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\theme\weblogin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\theme\weblogin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\theme\weblogin\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -2815,6 +2830,7 @@
     <Content Include="Views\Statistic\Categories.cshtml" />
     <Content Include="Views\Employee\Employees.cshtml" />
     <Content Include="Views\Todo\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
