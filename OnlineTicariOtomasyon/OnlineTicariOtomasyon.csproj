@@ -2870,6 +2870,7 @@
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Shared\CustomerLayout.cshtml" />
     <Content Include="Views\CustomerPanel\Index.cshtml" />
+    <Content Include="Views\Login\CustomerLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
