@@ -1,8 +1,26 @@
-﻿
+﻿@model OnlineTicariOtomasyon.Models.Classes.Customer
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/CustomerLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Profilim</h2>
 
+@using (Html.BeginForm("Profile", "CustomerPanel", FormMethod.Post)) { 
+    <table class="table table-hover">
+        <tr><td><label>Mail Adresi @ViewBag.customer.Mail</label></td></tr>
+        
+            <tr>
+                <td>@Html.LabelFor(x=>x.Name) @Html.TextBoxFor(x=>x.Name,new { @class="form-control"})</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Surname) @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Address) @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })</td>
+            </tr>
+        
+    </table>
+    <button class="btn btn-warning">Bilgilerimi Kaydet</button>
+}
+<br />

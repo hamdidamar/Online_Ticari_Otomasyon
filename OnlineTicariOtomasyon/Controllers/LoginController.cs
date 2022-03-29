@@ -45,6 +45,7 @@ namespace OnlineTicariOtomasyon.Controllers
             {
                 FormsAuthentication.SetAuthCookie(loginInfo.Mail, false);
                 Session["CustomerMail"] = loginInfo.Mail.ToString();
+                Session["CustomerId"] = loginInfo.CustomerId.ToString();
                 return RedirectToAction("Index", "CustomerPanel");
             }
             return RedirectToAction("Index", "Login");

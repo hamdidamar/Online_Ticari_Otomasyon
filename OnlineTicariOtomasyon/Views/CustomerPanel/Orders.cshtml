@@ -1,0 +1,30 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Order>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+<br />
+<h2>Siparişlerim</h2>
+<br />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ürün</th>
+            <th>Fiyat</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Product.Name</td>
+                <td>@x.Price</td>
+                <td>@x.Date.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
