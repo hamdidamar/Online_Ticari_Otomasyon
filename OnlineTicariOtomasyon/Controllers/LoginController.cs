@@ -50,5 +50,24 @@ namespace OnlineTicariOtomasyon.Controllers
             }
             return RedirectToAction("Index", "Login");
         }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminLogin(Admin admin)
+        {
+            var loginInfo = ctx.Admins.Where(x => x.IsActive && x.Username == admin.Username && x.Password == admin.Password).FirstOrDefault();
+            if (loginInfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(loginInfo.Username, false);
+                Session["AdminUsername"] = loginInfo.Username.ToString();
+                return RedirectToAction("Index", "Category");
+            }
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

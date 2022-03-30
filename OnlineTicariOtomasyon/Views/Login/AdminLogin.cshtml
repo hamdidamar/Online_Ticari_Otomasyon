@@ -1,0 +1,15 @@
+﻿
+<div class="login-form login-form-left">
+    <div class="agile-row">
+        <h3>Yetkili Girişi</h3>
+        <div class="clear"></div>
+        <div class="login-agileits-top">
+            @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+            {
+                <input type="text" class="text" name="Username" Placeholder="Kullanıcı Adınız.." required="" />
+                <input type="password" class="password" name="Password" Placeholder="Şifreniz.." required="" />
+                <input type="submit" value="Giriş Yap">
+            }
+        </div>
+    </div>
+</div>
