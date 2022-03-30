@@ -1,16 +1,13 @@
 ﻿@using OnlineTicariOtomasyon.Models.Classes
-@using PagedList
-@using PagedList.Mvc
-@model PagedList.IPagedList<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-
 <a href="/Category/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px"> Yeni Kategori</a>
-
-<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<br />
+<br />
+<table id="table_categories" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
             @*<th class="col-lg-1">Id</th>*@
@@ -33,4 +30,19 @@
 
     </tbody>
 </table>
+<br />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $('#table_categories').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }});
+
+</script>

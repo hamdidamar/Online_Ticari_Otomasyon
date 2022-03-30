@@ -6,8 +6,8 @@
 }
 
 <a href="/Product/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Ürün</a>
-
-<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<br /><br />
+<table id="table_products" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
             <th class="col-lg-1">Id</th>
@@ -28,19 +28,19 @@
         @foreach (var p in Model)
         {
 
-        <tr>
-            <td>@p.ProductId</td>
-            <td>@p.Name</td>
-            <td>@p.Brand</td>
-            <td>@p.Stock</td>
-            <td>@p.PurchasePrice</td>
-            <td>@p.SalePrice</td>
-            <td>@p.Category.Name</td>
-            <td><img src="@p.PhotoPath" style="max-height:50px" /></td>
-            <td><a href="/ProductDetail/Index/@p.ProductId" class="btn btn-info">Detay</a></td>
-            <td><a href="/Product/Update/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/Product/Delete/@p.ProductId" class="btn btn-danger">Sil</a></td>
-        </tr>
+            <tr>
+                <td>@p.ProductId</td>
+                <td>@p.Name</td>
+                <td>@p.Brand</td>
+                <td>@p.Stock</td>
+                <td>@p.PurchasePrice</td>
+                <td>@p.SalePrice</td>
+                <td>@p.Category.Name</td>
+                <td><img src="@p.PhotoPath" style="max-height:50px" /></td>
+                <td><a href="/ProductDetail/Index/@p.ProductId" class="btn btn-info">Detay</a></td>
+                <td><a href="/Product/Update/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Product/Delete/@p.ProductId" class="btn btn-danger">Sil</a></td>
+            </tr>
 
         }
 
@@ -49,3 +49,18 @@
 
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $('#table_products').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }});
+
+</script>
