@@ -16,7 +16,7 @@
 <table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
-            <th class="col-lg-1">Id</th>
+            @*<th class="col-lg-1">Id</th>*@
             <th>Name</th>
             <th>Surname</th>
             <th>Photo</th>
@@ -27,11 +27,11 @@
         @foreach (var e in Model)
         {
         <tr>
-            <td>@e.EmployeeId</td>
+            @*<td>@e.EmployeeId</td>*@
 
             <td>@e.Name</td>
             <td>@e.Surname</td>
-            <td>@e.PhotoPath</td>
+            <td><img src="@e.PhotoPath" style="max-height:50px" /></td>
             <td><a href="/Department/EmployeeOrders/@e.EmployeeId" class="btn btn-info">Satışlar</a></td>
         </tr>
         }

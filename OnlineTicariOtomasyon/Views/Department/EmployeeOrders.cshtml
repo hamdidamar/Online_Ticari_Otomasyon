@@ -13,10 +13,10 @@
     <li class="breadcrumb-item active">Personel : @(ViewBag.employee) </li>
 </ol>
 
-<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<table id="table_employeeOrders" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
-            <th class="col-lg-1">Id</th>
+            @*<th class="col-lg-1">Id</th>*@
             <th>Product</th>
             <th>Customer</th>
             <th>Amount</th>
@@ -30,7 +30,7 @@
         @foreach (var o in Model)
         {
             <tr>
-                <td>@o.OrderId</td>
+                @*<td>@o.OrderId</td>*@
                 <td>@o.Product.Name</td>
                 <td>@o.Customer.Name  @o.Customer.Surname</td>
                 <td>@o.Amount</td>
@@ -43,3 +43,19 @@
 
     </tbody>
 </table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $('#table_employeeOrders').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }});
+
+</script>

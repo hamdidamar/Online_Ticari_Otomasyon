@@ -6,11 +6,11 @@
 }
 
 <a href="/Department/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Departman</a>
-
-<table class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<br /><br />
+<table id="table_departments" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
-            <th class="col-lg-1">Id</th>
+            @*<th class="col-lg-1">Id</th>*@
             <th>Name</th>
             <th class="col-lg-1">Detail</th>
             <th class="col-lg-1">Edit</th>
@@ -21,7 +21,7 @@
         @foreach (var d in Model)
         {
             <tr>
-                <td>@d.DepartmentId</td>
+                @*<td>@d.DepartmentId</td>*@
 
                 <td>@d.Name</td>
                 <td><a href="/Department/Detail/@d.DepartmentId" class="btn btn-info">Detail</a></td>
@@ -32,3 +32,19 @@
 
     </tbody>
 </table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $('#table_departments').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }});
+
+</script>
