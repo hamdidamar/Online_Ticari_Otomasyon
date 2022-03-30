@@ -15,9 +15,8 @@
             <th>Tax Admin</th>
             <th>Date</th>
             <th>Hour</th>
-            <th>Submitter</th>
-            <th>Receiver</th>
             <th>Total</th>
+            <th class="col-lg-2">New Invoice Row</th>
             <th class="col-lg-1">Detail</th>
             <th class="col-lg-1">Edit</th>
         </tr>
@@ -31,9 +30,8 @@
             <td>@i.TaxAdmin</td>
             <td>@i.Date.ToShortDateString()</td>
             <td>@i.Time</td>
-            <td>@i.Submitter</td>
-            <td>@i.Receiver</td>
             <td>@i.Total ₺</td>
+            <td><a data-toggle="modal" data-target="#ModalNewInvoiceRow" class="btn btn-secondary" style="color:white">Yeni Kalem</a></td> @*href="/Invoice/AddRow/@i.InvoiceId"*@
             <td><a href="/Invoice/Detail/@i.InvoiceId" class="btn btn-info">Detail</a></td>
             <td><a href="/Invoice/Update/@i.InvoiceId" class="btn btn-warning">Güncelle</a></td>
         </tr>
@@ -41,3 +39,13 @@
 
     </tbody>
 </table>
+
+<div class="modal" id="ModalNewInvoiceRow">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"> Yeni Kalem Girişi</h2>
+            </div>
+        </div>
+    </div>
+</div>
