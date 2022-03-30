@@ -10,9 +10,8 @@
 <table class="table  table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
-            <th class="col-lg-1">Id</th>
+            @*<th class="col-lg-1">Id</th>*@
             <th>Serial Number</th>
-            <th>Row Number</th>
             <th>Tax Admin</th>
             <th>Date</th>
             <th>Hour</th>
@@ -27,9 +26,8 @@
         @foreach (var i in Model)
         {
         <tr>
-            <td>@i.InvoiceId</td>
-            <td>@i.SerialNumber</td>
-            <td>@i.RowNumber</td>
+            @*<td>@i.InvoiceId</td>*@
+            <td>@i.SerialNumber @i.RowNumber</td>
             <td>@i.TaxAdmin</td>
             <td>@i.Date.ToShortDateString()</td>
             <td>@i.Time</td>
