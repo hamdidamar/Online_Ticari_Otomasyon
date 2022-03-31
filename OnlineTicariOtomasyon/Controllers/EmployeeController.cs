@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,6 +31,14 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Add(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                var filename = Path.GetFileName(Request.Files[0].FileName);
+                var fileextension = Path.GetExtension(Request.Files[0].FileName);
+                var path = "~/img/" + filename + fileextension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                employee.PhotoPath = "/img/" + filename + fileextension;
+            }
             employee.IsActive = true;
             ctx.Employees.Add(employee);
             ctx.SaveChanges();
