@@ -65,6 +65,14 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Update(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                var filename = Path.GetFileName(Request.Files[0].FileName);
+                var fileextension = Path.GetExtension(Request.Files[0].FileName);
+                var path = "~/img/" + filename + fileextension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                employee.PhotoPath = "/img/" + filename + fileextension;
+            }
             var newEmployee = ctx.Employees.Find(employee.EmployeeId);
             newEmployee.Name = employee.Name;
             newEmployee.Surname = employee.Surname;
