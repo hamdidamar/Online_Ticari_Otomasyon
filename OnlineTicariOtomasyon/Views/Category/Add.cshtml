@@ -7,10 +7,15 @@
 <br />
 <h2>Yeni Kategori</h2>
 <br />
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <form class="form-group" method="post">
     @Html.LabelFor(x=>x.Name)
     @Html.TextBoxFor(x=>x.Name,new { @class="form-control"})
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info" id="btnAdd">Kaydet</button>
+    <script>
+        $("#btnAdd").click(function () {
+            alert("Kategori başarıyla eklendi.")
+        });
+    </script>
 </form>

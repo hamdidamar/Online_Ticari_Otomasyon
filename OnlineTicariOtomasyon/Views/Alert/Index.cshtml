@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<br />
+<button class="btn btn-primary" id="btnHello">Merhaba</button>
+<button class="btn btn-dark" id="btnTitle">Başlık & İçerik</button>
+<button class="btn btn-success" id="btnSuccess">Başarılı</button>
+<button class="btn btn-warning" id="btnWarning">Uyarı</button>
+<button class="btn btn-danger" id="btnError">Hatalı</button>
+<button class="btn btn-default" id="btnSure" style="background-color:#111029;color:white">Emin misin?</button>
+
+<script>
+    $("#btnHello").click(function () {
+        swal("Merhaba!")
+    });
+</script>
+
+<script>
+    $("#btnTitle").click(function () {
+        swal("Başlık","İçerik bölümü")
+    });
+</script>
+
+<script>
+    $("#btnSuccess").click(function () {
+        swal("Başlık", "İçerik bölümü","success")
+    });
+</script>
+
+<script>
+    $("#btnWarning").click(function () {
+        swal("Başlık", "İçerik bölümü", "warning")
+    });
+</script>
+
+<script>
+    $("#btnError").click(function () {
+        swal("Başlık", "İçerik bölümü", "error")
+    });
+</script>
+
+<script>
+    $("#btnSure").click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "bla bla",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("ok message", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("no message");
+                }
+            });
+    });
+</script>
