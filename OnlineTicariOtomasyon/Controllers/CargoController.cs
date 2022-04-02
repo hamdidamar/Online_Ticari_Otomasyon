@@ -33,5 +33,11 @@ namespace OnlineTicariOtomasyon.Controllers
             ctx.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult CargoOperation(string id)
+        {
+            var operations = ctx.CargoOperations.Where(x => x.Code == id).ToList();
+            return View(operations);
+        }
     }
 }

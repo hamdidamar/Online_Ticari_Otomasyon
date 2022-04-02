@@ -1,37 +1,28 @@
 ﻿@using OnlineTicariOtomasyon.Models.Classes
-@model List<CargoDetail>
+@model List<CargoOperation>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CargoOperation";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-
-
-<a href="/Cargo/AddDetail" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Kargo</a>
+<a href="/Cargo/AddOperation" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Operasyon</a>
 <br />
 <br />
-<table id="table_cargoDetails" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+<table id="table_cargoOperations" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
     <thead>
         <tr>
-            <th >Code</th>
-            <th>Personel</th>
-            <th>Receiver</th>
+            <th>Description</th>
             <th>Date</th>
-            <th class="col-lg-1">Detail</th>
-            @*<th class="col-lg-1">Edit</th>
-            <th class="col-lg-1">Delete</th>*@
+
         </tr>
     </thead>
     <tbody>
         @foreach (var c in Model)
         {
             <tr>
-                <td>@c.Code</td>
-
-                <td>@c.Employee</td>
-                <td>@c.Receiver</td>
+                <td>@c.Description</td>
                 <td>@c.Date.ToString("dd/MM/yyyy hh:mm")</td>
-                <td><a href="/Cargo/CargoOperation/@c.Code" class="btn btn-info">Detail</a></td>
+
             </tr>
         }
 
@@ -47,7 +38,7 @@
 
 <script>
 
-    $('#table_cargoDetails').dataTable({
+    $('#table_cargoOperations').dataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
         }
