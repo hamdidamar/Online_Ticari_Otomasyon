@@ -9,7 +9,8 @@
 <form class="form-group" method="post">
     <br />
     @Html.LabelFor(x => x.Code)
-    @Html.TextBoxFor(x => x.Code, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.Code, new { @class = "form-control" })*@
+    <input type="text" class="form-control" name="Code" value="@ViewBag.randomCode" readonly required/>
     <br />
     @Html.LabelFor(x => x.Employee)
     @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })

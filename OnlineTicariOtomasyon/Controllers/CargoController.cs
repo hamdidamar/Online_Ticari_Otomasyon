@@ -20,6 +20,8 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult AddDetail()
         {
+            string randomCode = Guid.NewGuid().ToString();
+            ViewBag.randomCode = randomCode;
             return View();
         }
         [HttpPost]
@@ -29,7 +31,7 @@ namespace OnlineTicariOtomasyon.Controllers
             cargoDetail.IsActive = true;
             ctx.CargoDetails.Add(cargoDetail);
             ctx.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
