@@ -16,5 +16,20 @@ namespace OnlineTicariOtomasyon.Controllers
             var cargoDetails = ctx.CargoDetails.Where(x => x.IsActive).ToList();
             return View(cargoDetails);
         }
+
+        [HttpGet]
+        public ActionResult AddDetail()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddDetail(CargoDetail cargoDetail)
+        {
+            cargoDetail.Date = DateTime.Now;
+            cargoDetail.IsActive = true;
+            ctx.CargoDetails.Add(cargoDetail);
+            ctx.SaveChanges();
+            return View();
+        }
     }
 }

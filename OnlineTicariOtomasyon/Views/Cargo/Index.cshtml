@@ -7,7 +7,7 @@
 
 
 
-<a href="/CargoDetail/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Kargo</a>
+<a href="/Cargo/AddDetail" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Kargo</a>
 <br />
 <br />
 <table id="table_cargoDetails" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
@@ -31,7 +31,7 @@
                 <td>@c.Employee</td>
                 <td>@c.Receiver</td>
                 <td>@c.Date.ToString("dd/MM/yyyy hh:mm")</td>
-                <td><a href="/CargoDetail/Detail/@c.CargoDetailId" class="btn btn-info">Detail</a></td>
+                <td><a href="/Cargo/Detail/@c.CargoDetailId" class="btn btn-info">Detail</a></td>
             </tr>
         }
 

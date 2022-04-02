@@ -2891,6 +2891,7 @@
     <Content Include="Views\Alert\Index.cshtml" />
     <Content Include="Views\Product\Sale.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cargo\AddDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

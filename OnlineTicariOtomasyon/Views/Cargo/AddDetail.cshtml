@@ -1,0 +1,24 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.CargoDetail
+@{
+    ViewBag.Title = "AddDetail";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Kargo</h2>
+
+<form class="form-group" method="post">
+    <br />
+    @Html.LabelFor(x => x.Code)
+    @Html.TextBoxFor(x => x.Code, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Receiver)
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kargo Ekle</button>
+</form>
