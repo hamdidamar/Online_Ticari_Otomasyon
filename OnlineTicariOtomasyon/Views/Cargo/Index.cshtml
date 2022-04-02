@@ -1,0 +1,56 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<CargoDetail>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<a href="/CargoDetail/Add" class="btn btn-primary" style="margin-left:16px;margin-top:16px">Yeni Kargo</a>
+<br />
+<br />
+<table id="table_cargoDetails" class="table table-bordered table-hover" style="margin-top:16px; margin-left:16px; margin-right:16px">
+    <thead>
+        <tr>
+            @*<th class="col-lg-1">Id</th>*@
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th class="col-lg-1">Detail</th>
+            @*<th class="col-lg-1">Edit</th>
+            <th class="col-lg-1">Delete</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                @*<td>@d.DepartmentId</td>*@
+
+                <td>@c.Employee</td>
+                <td>@c.Receiver</td>
+                <td>@c.Date.ToString("dd/MM/yyyy hh:mm")</td>
+                <td><a href="/CargoDetail/Detail/@c.CargoDetailId" class="btn btn-info">Detail</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $('#table_cargoDetails').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+
+</script>
