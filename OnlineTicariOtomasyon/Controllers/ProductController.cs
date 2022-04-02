@@ -73,5 +73,27 @@ namespace OnlineTicariOtomasyon.Controllers
             var products = ctx.Products.Where(x => x.IsActive).ToList();
             return View(products);
         }
+        [HttpGet]
+        public ActionResult Sale(int id)
+        {
+            var products = dropdownHelper.GetProducts(x=>x.ProductId == id);
+            var customers = dropdownHelper.GetCustomers();
+            var employees = dropdownHelper.GetEmployees();
+            ViewBag.products = products;
+            ViewBag.customers = customers;
+            ViewBag.employees = employees;
+            ViewBag.price = ctx.Products.Where(x=>x.IsActive && x.ProductId == id).FirstOrDefault().SalePrice;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Sale(Order order)
+        {
+            order.Date = DateTime.Now;
+            order.IsActive = true;
+            ctx.Orders.Add(order);
+            ctx.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

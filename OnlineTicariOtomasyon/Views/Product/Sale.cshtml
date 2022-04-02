@@ -1,0 +1,41 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Order
+@{
+    ViewBag.Title = "Sale";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <br />
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.products, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Customer)
+    @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.customers, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.employees, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @*@Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })*@
+    <input type="number" id="Amount" name="Amount" onchange="sum()" min="1" onkeyup="sum()" value="1" class="form-control" />
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @*@Html.TextBoxFor(x => x.Price, new { @class = "form-control" })*@
+    <input type="text" id="Price" name="Price" onkeyup="sum()" value="@ViewBag.price" class="form-control" />
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @*@Html.TextBoxFor(x => x.Total, new { @class = "form-control" })*@
+    <input type="text" id="Total" name="Total" value="@ViewBag.price" class="form-control" />
+    <br />
+    <button class="btn btn-info">Satış Yap</button>
+</form>
+<script>
+    function sum() {
+        var amount = document.getElementById("Amount").value;
+        var price = document.getElementById("Price").value;
+        var total = parseFloat(amount) * parseFloat(price);
+        if (!isNaN(total)) {
+            document.getElementById("Total").value = total;
+        }
+    }
+</script>

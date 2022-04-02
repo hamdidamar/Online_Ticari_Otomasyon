@@ -2882,6 +2882,7 @@
     <Content Include="Views\CustomerPanel\Orders.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Alert\Index.cshtml" />
+    <Content Include="Views\Product\Sale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
