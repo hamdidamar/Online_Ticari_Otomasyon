@@ -2901,6 +2901,7 @@
     <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\Graph\Index.cshtml" />
     <Content Include="Views\Graph\CategoryAndProductCountGraph.cshtml" />
+    <Content Include="Views\Graph\ProductStockGraph.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

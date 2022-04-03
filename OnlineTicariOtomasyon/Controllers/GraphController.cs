@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineTicariOtomasyon.Models.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace OnlineTicariOtomasyon.Controllers
 {
     public class GraphController : Controller
     {
+        Context ctx = new Context();
         // GET: Graph
         public ActionResult Index()
         {
@@ -21,6 +23,15 @@ namespace OnlineTicariOtomasyon.Controllers
             graph.AddTitle("Kategori - Ürün Stok Grafiği")
                  .AddLegend("Stok")
                  .AddSeries("Kategoriler", xValue: new[] { "mobilya", "beyaz eşya", "teknoloji" }, yValues: new[] { 76, 97, 138 })
+                 .Write();
+            return File(graph.ToWebImage().GetBytes(), "image/jpeg");
+        }
+
+        public ActionResult ProductStockGraph()
+        {
+            var graph = new Chart(600, 600);
+            graph.AddTitle("Ürün Stok Grafiği")
+                 .AddSeries(chartType:"Pie", xValue: ctx.Products.Where(x=>x.IsActive).Select(x=>x.Name).ToArray(), yValues: ctx.Products.Where(x => x.IsActive).Select(x => x.Stock).ToArray())
                  .Write();
             return File(graph.ToWebImage().GetBytes(), "image/jpeg");
         }
