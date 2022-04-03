@@ -2905,6 +2905,7 @@
     <Content Include="Views\Graph\CategoryAndProductCountGraph.cshtml" />
     <Content Include="Views\Graph\ProductStockGraph.cshtml" />
     <Content Include="Views\Graph\ProductAndStockGraph.cshtml" />
+    <Content Include="Views\CustomerPanel\MyMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

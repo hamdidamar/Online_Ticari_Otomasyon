@@ -31,5 +31,11 @@ namespace OnlineTicariOtomasyon.Controllers
             var orders = ctx.Orders.Where(x => x.IsActive && x.CustomerId == CustomerId).ToList();
             return View(orders);
         }
+
+        public ActionResult MyMessages()
+        {
+            var messages = ctx.Messages.Where(x => x.IsActive).ToList();
+            return View(messages);
+        }
     }
 }
