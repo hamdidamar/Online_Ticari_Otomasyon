@@ -22,5 +22,6 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public DbSet<TaskTodo> TaskTodos { get; set; }
         public DbSet<CargoDetail> CargoDetails { get; set; }
         public DbSet<CargoOperation> CargoOperations { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
