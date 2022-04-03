@@ -47,9 +47,12 @@ namespace OnlineTicariOtomasyon.Controllers
         public ActionResult ProductAndStockGraph(int id=1)
         {
             JsonResponseMessage message = new JsonResponseMessage();
-            List<Object> list = new List<object>();
-            list.Add(new { Name = "test", Stock = 10 });
-            list.Add(new { Name = "test2", Stock = 30 });
+            var list = ctx.Products.Where(x => x.IsActive).Select(y => new
+            {
+                Name = y.Name,
+                Stock = y.Stock
+            }).ToList();
+
             message.data = list;
             return Json(message, JsonRequestBehavior.AllowGet);
         }
