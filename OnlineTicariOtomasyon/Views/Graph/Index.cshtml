@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{ 
+    var graph = new Chart(width: 500, height: 500);
+    graph.AddTitle(text: "Kategoriler ve Ürün Sayıları");
+    graph.AddLegend(title: "Kategoriler");
+    graph.AddSeries(name: "Sayılar",chartType:"Pie", xValue: new[] { "Kategori 1","Kategori 2" }, yValues: new[] { 50 ,80});
+    graph.Write();
+
+    //Chart türleri Bubble,Pie,Doughnut,Area,Bar
+}
