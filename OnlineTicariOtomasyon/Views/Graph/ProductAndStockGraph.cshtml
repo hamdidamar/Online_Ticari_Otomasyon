@@ -77,11 +77,35 @@
 
             var columnChartOptions = {
 
-                title: "Ürün - Stok Grafiği",
+                title: "Ürün - Stok Sutün Grafiği",
 
                 width: 1000,
 
-                height: 400,
+                height: 200,
+
+                bar: { groupWidth: "20%" },
+
+            };
+
+            var lineChartOptions = {
+
+                title: "Ürün - Stok Çizgi Grafiği",
+
+                width: 1000,
+
+                height: 200,
+
+                bar: { groupWidth: "20%" },
+
+            };
+
+            var pieChartOptions = {
+
+                title: "Ürün - Stok Dilim Grafiği",
+
+                width: 1000,
+
+                height: 200,
 
                 bar: { groupWidth: "20%" },
 
@@ -93,9 +117,18 @@
 
                 .getElementById('columnchart_div'));
 
+            var lineChart = new google.visualization.LineChart(document
+
+                .getElementById('linechart_div'));
+
+            var pieChart = new google.visualization.PieChart(document
+
+                .getElementById('piechart_div'));
 
 
             columnChart.draw(data, columnChartOptions);
+            lineChart.draw(data, lineChartOptions);
+            pieChart.draw(data, pieChartOptions);
 
         }
 
@@ -106,6 +139,8 @@
 <body>
 
     <div id="columnchart_div"></div>
+    <div id="linechart_div"></div>
+    <div id="piechart_div"></div>
 
     @*<a href="@Url.Action("PieChart")" class="btn btn-danger">Pie Chart</a>
 
