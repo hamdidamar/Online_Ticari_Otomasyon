@@ -1,4 +1,5 @@
 ﻿using OnlineTicariOtomasyon.Models.Classes;
+using OnlineTicariOtomasyon.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,26 @@ namespace OnlineTicariOtomasyon.Controllers
         {
             var graph = new Chart(600, 600);
             graph.AddTitle("Ürün Stok Grafiği")
-                 .AddSeries(chartType:"Pie", xValue: ctx.Products.Where(x=>x.IsActive).Select(x=>x.Name).ToArray(), yValues: ctx.Products.Where(x => x.IsActive).Select(x => x.Stock).ToArray())
+                 .AddSeries(chartType: "Pie", xValue: ctx.Products.Where(x => x.IsActive).Select(x => x.Name).ToArray(), yValues: ctx.Products.Where(x => x.IsActive).Select(x => x.Stock).ToArray())
                  .Write();
             return File(graph.ToWebImage().GetBytes(), "image/jpeg");
+        }
+
+        [HttpGet]
+        public ActionResult ProductAndStockGraph()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ProductAndStockGraph(int id=1)
+        {
+            JsonResponseMessage message = new JsonResponseMessage();
+            List<Object> list = new List<object>();
+            list.Add(new { Name = "test", Stock = 10 });
+            list.Add(new { Name = "test2", Stock = 30 });
+            message.data = list;
+            return Json(message, JsonRequestBehavior.AllowGet);
         }
     }
 }

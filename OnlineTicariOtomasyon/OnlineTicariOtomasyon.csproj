@@ -183,6 +183,7 @@
     <Compile Include="Models\Classes\ProductDetail.cs" />
     <Compile Include="Models\Classes\StatisticCard.cs" />
     <Compile Include="Models\Classes\TaskTodo.cs" />
+    <Compile Include="Models\DTOs\JsonResponseMessage.cs" />
     <Compile Include="Models\Helpers\DropdownHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2902,6 +2903,7 @@
     <Content Include="Views\Graph\Index.cshtml" />
     <Content Include="Views\Graph\CategoryAndProductCountGraph.cshtml" />
     <Content Include="Views\Graph\ProductStockGraph.cshtml" />
+    <Content Include="Views\Graph\ProductAndStockGraph.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
