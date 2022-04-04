@@ -1,9 +1,11 @@
 ﻿@using OnlineTicariOtomasyon.Models.Classes;
 @model List<Message>
+
 @{
-    ViewBag.Title = "MyMessages";
+    ViewBag.Title = "SendMessages";
     Layout = "~/Views/Shared/CustomerLayout.cshtml";
 }
+
 
 <br />
 <!DOCTYPE html>
@@ -12,10 +14,10 @@
 
 <head>
 
-    <link rel="stylesheet" href=""~/Content/theme/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href=""~/Content/theme/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href=""~/Content/theme/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
@@ -33,7 +35,7 @@
 
                 <div class="card">
 
-                 
+
                     <div class="card-body p-0">
 
                         <ul class="nav nav-pills flex-column">
@@ -60,20 +62,20 @@
 
                             @*<li class="nav-item">
 
-                                <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link">
 
-                                    <i class="far fa-file-alt"></i> Taslak
-                                    <span class="badge bg-warning float-right" style="color:white">5</span>
-                                </a>
+                                        <i class="far fa-file-alt"></i> Taslak
+                                        <span class="badge bg-warning float-right" style="color:white">5</span>
+                                    </a>
 
-                            </li>*@
+                                </li>*@
 
                             <li class="nav-item">
 
                                 <a href="#" class="nav-link">
 
                                     <i class="far fa-trash-alt"></i> Çöp Kutusu
-                                    <span class="badge bg-danger float-right" style="color:white" >@ViewBag.deletedCount</span>
+                                    <span class="badge bg-danger float-right" style="color:white">@ViewBag.deletedCount</span>
                                 </a>
 
                             </li>
@@ -92,7 +94,7 @@
 
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Kutusu</h3>
+                        <h3 class="card-title">Giden Kutusu</h3>
                         <div class="card-tools">
 
                             <div class="input-group input-group-sm">
@@ -186,7 +188,7 @@
 
                                             <td class="mailbox-subject">
 
-                                                <b>@x.Subject</b> 
+                                                <b>@x.Subject</b>
                                             </td>
 
                                             <td class="mailbox-attachment"></td>
