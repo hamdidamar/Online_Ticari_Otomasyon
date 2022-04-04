@@ -43,7 +43,7 @@
                                 <a href="#" class="nav-link">
 
                                     <i class="fas fa-inbox"></i> Gelen Kutusu
-                                    <span class="badge bg-primary float-right" style="color:white">5</span>
+                                    <span class="badge bg-primary float-right" style="color:white">@ViewBag.inboxCount</span>
                                 </a>
 
                             </li>
@@ -53,12 +53,12 @@
                                 <a href="#" class="nav-link">
 
                                     <i class="far fa-envelope"></i> Gönderilen Mesajlar
-                                    <span class="badge float-right" style="background-color:darkolivegreen;color:white">5</span>
+                                    <span class="badge float-right" style="background-color:darkolivegreen;color:white">@ViewBag.sendCount</span>
                                 </a>
 
                             </li>
 
-                            <li class="nav-item">
+                            @*<li class="nav-item">
 
                                 <a href="#" class="nav-link">
 
@@ -66,14 +66,14 @@
                                     <span class="badge bg-warning float-right" style="color:white">5</span>
                                 </a>
 
-                            </li>
+                            </li>*@
 
                             <li class="nav-item">
 
                                 <a href="#" class="nav-link">
 
                                     <i class="far fa-trash-alt"></i> Çöp Kutusu
-                                    <span class="badge bg-danger float-right" style="color:white" >5</span>
+                                    <span class="badge bg-danger float-right" style="color:white" >@ViewBag.deletedCount</span>
                                 </a>
 
                             </li>
