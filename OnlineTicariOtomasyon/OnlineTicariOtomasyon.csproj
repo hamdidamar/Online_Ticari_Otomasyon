@@ -2908,6 +2908,7 @@
     <Content Include="Views\CustomerPanel\MyMessages.cshtml" />
     <Content Include="Views\CustomerPanel\SendMessages.cshtml" />
     <Content Include="Views\CustomerPanel\DeletedMessages.cshtml" />
+    <Content Include="Views\CustomerPanel\ReadMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

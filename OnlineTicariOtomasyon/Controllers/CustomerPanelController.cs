@@ -73,5 +73,21 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.deletedCount = deletedCount;
             return View(messages);
         }
+
+        public ActionResult ReadMessage(int id)
+        {
+            var CustomerId = int.Parse(Session["CustomerId"].ToString());
+            var customer = ctx.Customers.Where(x => x.IsActive && x.CustomerId == CustomerId).FirstOrDefault();
+            var messages = ctx.Messages.Where(x => !x.IsActive && x.To == customer.Mail).ToList();
+            var inboxCount = ctx.Messages.Where(x => x.IsActive && x.To == customer.Mail).Count();
+            var sendCount = ctx.Messages.Where(x => x.IsActive && x.From == customer.Mail).Count();
+            var deletedCount = ctx.Messages.Where(x => !x.IsActive && x.To == customer.Mail).Count();
+            ViewBag.inboxCount = inboxCount;
+            ViewBag.sendCount = sendCount;
+            ViewBag.deletedCount = deletedCount;
+
+            var message = ctx.Messages.Where(x => x.IsActive && x.MessageId == id).FirstOrDefault();
+            return View(message);
+        }
     }
 }

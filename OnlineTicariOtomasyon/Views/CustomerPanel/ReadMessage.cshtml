@@ -1,0 +1,175 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Message
+@{
+    ViewBag.Title = "ReadMessage";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+
+<br />
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <section class="content">
+
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+                    <a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj</a>
+                    <div class="card">
+
+                        <div class="card-body p-0">
+
+                            <ul class="nav nav-pills flex-column">
+
+                                <li class="nav-item active">
+
+                                    <a href="/CustomerPanel/MyMessages" class="nav-link">
+
+                                        <i class="fas fa-inbox"></i> Gelen Kutusu
+                                        <span class="badge bg-primary float-right" style="color:white">@ViewBag.inboxCount</span>
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a href="/CustomerPanel/SendMessages" class="nav-link">
+
+                                        <i class="far fa-envelope"></i> Gönderilen Mesajlar
+                                        <span class="badge float-right" style="background-color:darkolivegreen;color:white">@ViewBag.sendCount</span>
+                                    </a>
+
+                                </li>
+
+                                @*<li class="nav-item">
+
+                        <a href="#" class="nav-link">
+
+                            <i class="far fa-file-alt"></i> Taslak
+                            <span class="badge bg-warning float-right" style="color:white">5</span>
+                        </a>
+
+                    </li>*@
+
+                                <li class="nav-item">
+
+                                    <a href="/CustomerPanel/DeletedMessages" class="nav-link">
+
+                                        <i class="far fa-trash-alt"></i> Çöp Kutusu
+                                        <span class="badge bg-danger float-right" style="color:white">@ViewBag.deletedCount</span>
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- /.col -->
+
+                <div class="col-md-9">
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-header">
+
+                            <h3 class="card-title">Konu: @Model.Subject</h3>
+
+                            <div class="mailbox-read-info">
+
+
+                                <h5 class="mt-2">
+
+                                    Kimden: @Model.From
+
+                                    <span class="mailbox-read-time float-right mr-5">@Model.Date.ToString("dd/MM/yyyy hh:mm")</span>
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                        <!-- /.card-header -->
+
+                        <div class="card-body p-0">
+
+                            
+
+                            <!-- /.mailbox-read-info -->
+
+                            
+
+                            <!-- /.mailbox-controls -->
+
+                            <div class="mailbox-read-message mt-5 ml-5 mb-5">
+
+                                @Model.Content
+
+                            </div>
+
+                            <!-- /.mailbox-read-message -->
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                        
+
+                        <!-- /.card-footer -->
+
+                        <div class="card-footer">
+
+                            <div class="float-right">
+
+                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
+
+                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+
+                            </div>
+
+                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+
+                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+    </section>
+
+  
+    </div>
+
+
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="../../dist/js/demo.js"></script>
+
+</body>
+
+</html>
