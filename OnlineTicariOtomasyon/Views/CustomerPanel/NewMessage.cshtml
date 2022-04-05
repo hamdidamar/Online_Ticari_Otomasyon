@@ -1,6 +1,6 @@
 ﻿@model OnlineTicariOtomasyon.Models.Classes.Message
 @{
-    ViewBag.Title = "ReadMessage";
+    ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/CustomerLayout.cshtml";
 }
 
@@ -11,6 +11,10 @@
 
 <head>
 
+    <link rel="stylesheet" href="~Content/theme/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
     <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="" ~ /Content/theme/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
@@ -19,17 +23,18 @@
 
 </head>
 
-<body>
+<body class="hold-transition sidebar-mini">
 
 
     <section class="content">
 
+        <div class="container-fluid">
 
             <div class="row">
 
                 <div class="col-md-3">
 
-                    <a href="/CustomerPanel/NewMessage" class="btn btn-primary btn-block mb-3">Yeni Mesaj</a>
+
                     <div class="card">
 
                         <div class="card-body p-0">
@@ -58,13 +63,13 @@
 
                                 @*<li class="nav-item">
 
-                        <a href="#" class="nav-link">
+                    <a href="#" class="nav-link">
 
-                            <i class="far fa-file-alt"></i> Taslak
-                            <span class="badge bg-warning float-right" style="color:white">5</span>
-                        </a>
+                        <i class="far fa-file-alt"></i> Taslak
+                        <span class="badge bg-warning float-right" style="color:white">5</span>
+                    </a>
 
-                    </li>*@
+                </li>*@
 
                                 <li class="nav-item">
 
@@ -83,6 +88,7 @@
 
                     </div>
 
+                  
 
                 </div>
 
@@ -94,82 +100,93 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">Konu: @Model.Subject</h3>
-
-                            <div class="mailbox-read-info">
-
-
-                                <h5 class="mt-2">
-
-                                    Kimden: @Model.From
-
-                                    <span class="mailbox-read-time float-right mr-5">@Model.Date.ToString("dd/MM/yyyy hh:mm")</span>
-
-                                </h5>
-
-                            </div>
+                            <h3 class="card-title">Yeni Mesaj</h3>
 
                         </div>
 
                         <!-- /.card-header -->
+                        <form class="form-group" method="post">
+                            <div class="card-body">
 
-                        <div class="card-body p-0">
+                                <div class="form-group">
 
-                            
+                                    <input class="form-control" name="To" placeholder="Kime:">
 
-                            <!-- /.mailbox-read-info -->
+                                </div>
 
-                            
+                                <div class="form-group">
 
-                            <!-- /.mailbox-controls -->
+                                    <input class="form-control" name="Subject" placeholder="Konu:">
 
-                            <div class="mailbox-read-message mt-5 ml-5 mb-5">
+                                </div>
 
-                                @Model.Content
+                                <div class="form-group">
+
+                                    <textarea id="compose-textarea" name="Content" class="form-control" style="height: 200px"></textarea>
+
+                                </div>
+
+                                <div class="float-right">
+
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                    <button type="button" class="btn btn-danger"><i class="fas fa-times"></i> İptal</button>
+
+                                </div>
+                                
+
 
                             </div>
-
-                            <!-- /.mailbox-read-message -->
-
-                        </div>
-
+                            
+                        </form>
                         <!-- /.card-body -->
 
                         
 
                         <!-- /.card-footer -->
 
-                        <div class="card-footer">
-
-                            <div class="float-right">
-
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
-
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
-
-                            </div>
-
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
-
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
-
-                        </div>
                     </div>
+
+                    <!-- /.card -->
+
                 </div>
+
+                <!-- /.col -->
+
             </div>
-       
+
+            <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
 
     </section>
-
-  
-    </div>
+    <br />
 
 
     <script src="~/Content/theme/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <script src="~/Content/theme/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="~/Content/theme/AdminLTE-3.0.4/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
     <script src="~/Content/theme/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+
+
     <script src="~/Content/theme/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+
+    <script src="~/Content/theme/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+
+
+    <script>
+$(function () {
+
+    //Add text editor
+
+    $('#compose-textarea').summernote()
+
+  })</script>
 
 </body>
 
 </html>
+

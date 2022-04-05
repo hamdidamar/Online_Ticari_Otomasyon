@@ -89,5 +89,41 @@ namespace OnlineTicariOtomasyon.Controllers
             var message = ctx.Messages.Where(x => x.IsActive && x.MessageId == id).FirstOrDefault();
             return View(message);
         }
+
+        [HttpGet]
+        public ActionResult NewMessage()
+        {
+            var CustomerId = int.Parse(Session["CustomerId"].ToString());
+            var customer = ctx.Customers.Where(x => x.IsActive && x.CustomerId == CustomerId).FirstOrDefault();
+            var inboxCount = ctx.Messages.Where(x => x.IsActive && x.To == customer.Mail).Count();
+            var sendCount = ctx.Messages.Where(x => x.IsActive && x.From == customer.Mail).Count();
+            var deletedCount = ctx.Messages.Where(x => !x.IsActive && x.To == customer.Mail).Count();
+            ViewBag.inboxCount = inboxCount;
+            ViewBag.sendCount = sendCount;
+            ViewBag.deletedCount = deletedCount;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewMessage(Message message)
+        {
+            var CustomerId = int.Parse(Session["CustomerId"].ToString());
+            var customer = ctx.Customers.Where(x => x.IsActive && x.CustomerId == CustomerId).FirstOrDefault();
+            var inboxCount = ctx.Messages.Where(x => x.IsActive && x.To == customer.Mail).Count();
+            var sendCount = ctx.Messages.Where(x => x.IsActive && x.From == customer.Mail).Count();
+            var deletedCount = ctx.Messages.Where(x => !x.IsActive && x.To == customer.Mail).Count();
+            ViewBag.inboxCount = inboxCount;
+            ViewBag.sendCount = sendCount;
+            ViewBag.deletedCount = deletedCount;
+
+            message.From = customer.Mail;
+            message.Date = DateTime.Now;
+            message.IsActive = true;
+            ctx.Messages.Add(message);
+            ctx.SaveChanges();
+            return RedirectToAction("MyMessages");
+        }
+
+
     }
 }
