@@ -124,6 +124,18 @@ namespace OnlineTicariOtomasyon.Controllers
             return RedirectToAction("MyMessages");
         }
 
+        public ActionResult Cargo(string id)
+        {
+            var cargoDetails = ctx.CargoDetails.Where(x => x.IsActive && x.Code.Contains(id)).ToList();
+            return View(cargoDetails);
+        }
+
+        public ActionResult CargoOperation(string id)
+        {
+            var operations = ctx.CargoOperations.Where(x => x.Code == id).ToList();
+            return View(operations);
+        }
+
 
     }
 }

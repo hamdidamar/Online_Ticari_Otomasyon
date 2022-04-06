@@ -1,0 +1,29 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<CargoOperation>
+@{
+    ViewBag.Title = "CargoOperation";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+
+<br />
+<table id="table_cargoOperations" class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Description</td>
+                <td>@c.Date.ToString("dd/MM/yyyy hh:mm")</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

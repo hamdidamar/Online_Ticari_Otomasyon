@@ -2910,6 +2910,8 @@
     <Content Include="Views\CustomerPanel\DeletedMessages.cshtml" />
     <Content Include="Views\CustomerPanel\ReadMessage.cshtml" />
     <Content Include="Views\CustomerPanel\NewMessage.cshtml" />
+    <Content Include="Views\CustomerPanel\CargoOperation.cshtml" />
+    <Content Include="Views\CustomerPanel\Cargo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
