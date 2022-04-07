@@ -22,7 +22,9 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.orderCount = orderCount;
 
             var totalOrder = ctx.Orders.Where(x => x.IsActive && x.CustomerId == customer.CustomerId).Sum(y => y.Total).GetValueOrDefault(0);
+            var totalProduct = ctx.Orders.Where(x => x.IsActive && x.CustomerId == customer.CustomerId).Sum(y => y.Amount).GetValueOrDefault(0);
             ViewBag.totalOrder = totalOrder;
+            ViewBag.totalProduct = totalProduct;
             return View(customer);
         }
 

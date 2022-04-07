@@ -11,8 +11,8 @@ namespace OnlineTicariOtomasyon.Models.Classes
         [Key]
         public int OrderId { get; set; }
         public DateTime Date { get; set; }
-        public decimal Amount { get; set; }
-        public decimal Price { get; set; }
+        public decimal? Amount { get; set; }
+        public decimal? Price { get; set; }
         public decimal? Total { get; set; }
         public bool IsActive { get; set; }
 
