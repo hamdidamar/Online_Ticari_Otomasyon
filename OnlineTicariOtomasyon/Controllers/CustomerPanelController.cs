@@ -18,6 +18,8 @@ namespace OnlineTicariOtomasyon.Controllers
             var CustomerId = int.Parse(Session["CustomerId"].ToString());
             var customer = ctx.Customers.Where(x => x.IsActive && x.CustomerId == CustomerId).FirstOrDefault();
             ViewBag.customer = customer;
+            var orderCount = ctx.Orders.Where(x => x.IsActive && x.CustomerId == customer.CustomerId).Count();
+            ViewBag.orderCount = orderCount;
             return View(customer);
         }
 
