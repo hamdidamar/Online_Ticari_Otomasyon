@@ -15,6 +15,7 @@ namespace OnlineTicariOtomasyon.Models.Classes
         public string Mail { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
+        public string PhotoPath { get; set; }
         public string Address { get; set; }
         public bool IsActive { get; set; }
 
