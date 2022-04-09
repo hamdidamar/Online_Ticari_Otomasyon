@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OnlineTicariOtomasyon.Models.Classes;
+using OnlineTicariOtomasyon.Models.ViewModels;
 
 namespace OnlineTicariOtomasyon.Controllers
 {
@@ -80,7 +81,13 @@ namespace OnlineTicariOtomasyon.Controllers
             return RedirectToAction("/Detail/"+invoiceRow.InvoiceId);
         }
 
-
+        public ActionResult Dynamic()
+        {
+            var vm = new InvoiceVM();
+            vm.Invoices = ctx.Invoices.Where(x => x.IsActive).ToList();
+            vm.InvoiceRows = ctx.InvoiceRows.Where(x => x.IsActive).ToList();
+            return View(vm);
+        }
 
     }
 }
