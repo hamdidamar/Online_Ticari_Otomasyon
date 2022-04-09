@@ -8,6 +8,11 @@ namespace OnlineTicariOtomasyon.Models.ViewModels
 {
     public class InvoiceVM
     {
+        public InvoiceVM()
+        {
+            this.Invoices = new List<Invoice>();
+            this.InvoiceRows = new List<InvoiceRow>();
+        }
         public IEnumerable<Invoice> Invoices { get; set; }
         public IEnumerable<InvoiceRow> InvoiceRows { get; set; }
     }

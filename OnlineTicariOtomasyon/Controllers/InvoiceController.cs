@@ -89,5 +89,19 @@ namespace OnlineTicariOtomasyon.Controllers
             return View(vm);
         }
 
+        public ActionResult SaveInvoice(Invoice invoice,List<InvoiceRow> invoiceRows)
+        {
+            invoice.IsActive = true;
+            ctx.Invoices.Add(invoice);
+            foreach (var row in invoiceRows)
+            {
+                row.IsActive = true;
+
+                ctx.InvoiceRows.Add(row);
+            }
+            ctx.SaveChanges();
+            return Json("İşlem Başarılı",JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

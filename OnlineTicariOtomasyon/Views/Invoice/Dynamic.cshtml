@@ -5,7 +5,6 @@
 }
 <br />
 <br />
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <div class="panel panel-default">
 
     <div class="panel-heading">
@@ -23,117 +22,94 @@
         </div>
 
     </div>
+    
 
-
-
-    @*Receive All Database Data From Controller And Display Those Data In Client Side*@
-
-
-
-    @if (Model.Invoices.Count() != 0)
-
-    {
-
-        foreach (var item in Model.Invoices)
-
-        {
-
-            <div class="panel-body">
-
-                <table class="table table-striped table-responsive">
-
-                    <tbody>
-
-                        <tr>
-
-                            <td>Seri - Sıra No Name : @item.SerialNumber-@item.RowNumber </td>
-                            <td>Tarih : @item.Date.ToString("dd/MM/yyyy") </td>
-                            <td>Vergi Dairesi : @item.TaxAdmin </td>
-                            <td>Teslim Eden : @item.Submitter </td>
-                            <td>Teslim Alan : @item.Receiver </td>
-
-
-                        </tr>
-                        <tr>
-
-                            <td colspan="5">
-
-                                <table class="table table-bordered">
-
-                                    <tbody>
-
-                                        <tr>
-
-                                            <th>Açıklama</th>
-
-                                            <th>Miktar</th>
-
-                                            <th>Birim Fiyat</th>
-                                            <th>Tutar</th>
-
-
-                                        </tr>
-
-                                        @{
-
-                                            var totalBill = 0;
-
-                                        }
-
-                                        @foreach (var order in item.InvoiceRows)
-
-                                        {
-
-                                            <tr>
-
-                                                <td>@order.Description</td>
-
-                                                <td>@order.Amount</td>
-
-                                                <td>@order.UnitPrice</td>
-                                                <td>@order.Total</td>
-
-
-                                            </tr>
-
-                                            totalBill = totalBill + @Convert.ToInt32(order.Total);
-
-                                        }
-
-                                    </tbody>
-
-                                </table>
-
-                                <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar :  </strong> @totalBill</span>
-
-                            </td>
-
-                        </tr>
-
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        }
-
-    }
-
-    else
+    @foreach (var item in Model.Invoices)
 
     {
 
         <div class="panel-body">
 
-            <h3 style="color:red;">Empty!</h3>
+            <table class="table table-striped table-responsive">
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Seri - Sıra No Name : @item.SerialNumber-@item.RowNumber </td>
+                        <td>Tarih : @item.Date.ToString("dd/MM/yyyy") </td>
+                        <td>Vergi Dairesi : @item.TaxAdmin </td>
+                        <td>Teslim Eden : @item.Submitter </td>
+                        <td>Teslim Alan : @item.Receiver </td>
+
+
+                    </tr>
+                    <tr>
+
+                        <td colspan="5">
+
+                            <table class="table table-bordered">
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <th>Açıklama</th>
+
+                                        <th>Miktar</th>
+
+                                        <th>Birim Fiyat</th>
+                                        <th>Tutar</th>
+
+
+                                    </tr>
+
+                                    @{
+
+                                        var totalBill = 0;
+
+                                    }
+
+                                    @foreach (var order in item.InvoiceRows)
+
+                                    {
+
+                                        <tr>
+
+                                            <td>@order.Description</td>
+
+                                            <td>@order.Amount</td>
+
+                                            <td>@order.UnitPrice</td>
+                                            <td>@order.Total</td>
+
+
+                                        </tr>
+
+                                        totalBill = totalBill + @Convert.ToInt32(order.Total);
+
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                            <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar :  </strong> @totalBill</span>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
 
         </div>
 
-
-
     }
+
+
 
 </div>
 
@@ -219,10 +195,9 @@
 
 
                         </div>
-
                         <div class="form-group">
 
-                           
+
 
                             <label class="control-label col-md-2">
 
@@ -247,12 +222,7 @@
 
                             </div>
                         </div>
-
                         <div class="form-group">
-
-
-
-                           
 
                             <label class="control-label col-md-2">
 
@@ -280,7 +250,6 @@
                         </div>
                     </div>
 
-                    </div>
 
 
 
@@ -354,13 +323,13 @@
 
                                 <tr>
 
-                                    <th style="width:30%">Product</th>
+                                    <th style="width:30%">Açıklama</th>
 
-                                    <th style="width:20%">Unit Price</th>
+                                    <th style="width:20%">Miktar</th>
 
-                                    <th style="width:15%">Quantity</th>
+                                    <th style="width:15%">Birim Fiyat</th>
 
-                                    <th style="width:25%">Amount</th>
+                                    <th style="width:25%">Tutar</th>
 
                                     <th style="width:10%"></th>
 
@@ -375,22 +344,22 @@
                     </div>
 
                 </div>
-
                 <div class="modal-footer">
 
-                    <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="reset" class="btn btn-default" data-dismiss="modal">Kapat</button>
 
-                    <button id="saveOrder" type="submit" class="btn btn-danger">Save Order</button>
+                    <button id="saveOrder" type="submit" class="btn btn-danger">Faturayı Kaydet</button>
 
                 </div>
-
-            </form>
-
         </div>
+
+
+        </form>
 
     </div>
 
 </div>
+
 
 @section scripts{
 
@@ -412,21 +381,21 @@
 
 
 
-            if ($.trim($("#urun").val()) == "" || $.trim($("#Fiyat").val()) == "" || $.trim($("#Adet").val()) == "") return;
+            if ($.trim($("#Description").val()) == "" || $.trim($("#UnitPrice").val()) == "" || $.trim($("#Amount").val()) == "") return;
 
 
 
-            var urun = $("#urun").val(),
+            var Description = $("#Description").val(),
 
-                Fiyat = $("#Fiyat").val(),
+                UnitPrice = $("#UnitPrice").val(),
 
-                Adet = $("#Adet").val(),
+                Amount = $("#Amount").val(),
 
                 detailsTableBody = $("#detailsTable tbody");
 
 
 
-            var productItem = '<tr><td>' + urun + '</td><td>' + Adet + '</td><td>' + Fiyat + '</td><td>' + (parseFloat(Fiyat) * parseInt(Adet)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+            var productItem = '<tr><td>' + Description + '</td><td>' + Amount + '</td><td>' + UnitPrice + '</td><td>' + (parseFloat(UnitPrice) * parseInt(Amount)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
 
             detailsTableBody.append(productItem);
 
@@ -438,11 +407,11 @@
 
         function clearItem() {
 
-            $("#urun").val('');
+            $("#Description").val('');
 
-            $("#Fiyat").val('');
+            $("#UnitPrice").val('');
 
-            $("#Adet").val('');
+            $("#Amount").val('');
 
         }
 
@@ -478,7 +447,7 @@
 
                 type: 'POST',
 
-                url: "/Siparis/SaveOrder",
+                url: "/Invoice/SaveInvoice",
 
                 data: data,
 
@@ -508,39 +477,45 @@
 
 
 
-            var orderArr = [];
+            var invoiceRows = [];
 
-            orderArr.length = 0;
+            invoiceRows.length = 0;
 
 
 
             $.each($("#detailsTable tbody tr"), function () {
 
-                orderArr.push({
+                invoiceRows.push({
 
-                    urun: $(this).find('td:eq(0)').html(),
+                    Description: $(this).find('td:eq(0)').html(),
 
-                    Adet: $(this).find('td:eq(1)').html(),
+                    Amount: $(this).find('td:eq(1)').html(),
 
-                    Fiyat: $(this).find('td:eq(2)').html(),
+                    UnitPrice: $(this).find('td:eq(2)').html(),
 
-                    Toplam: $(this).find('td:eq(3)').html()
+                    Total: $(this).find('td:eq(3)').html()
 
                 });
 
             });
 
 
-
+            var invoice = {
+                SerialNumber: $("#SerialNumber").val(),
+                RowNumber: $("#RowNumber").val(),
+                Date: $("#Date").val(),
+                RowNumber: $("#RowNumber").val(),
+                TaxAdmin: $("#TaxAdmin").val(),
+                Submitter: $("#Submitter").val(),
+                Receiver: $("#Receiver").val(),
+                Time: $("#Time").val(),
+                Total: $("#Total").val()
+            };
 
 
             var data = JSON.stringify({
-
-                ad: $("#ad").val(),
-
-                sehir: $("#sehir").val(),
-
-                order: orderArr
+                invoice: invoice,
+                invoiceRows: invoiceRows
 
             });
 
