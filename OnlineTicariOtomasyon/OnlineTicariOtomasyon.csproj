@@ -186,6 +186,7 @@
     <Compile Include="Models\Classes\TaskTodo.cs" />
     <Compile Include="Models\DTOs\JsonResponseMessage.cs" />
     <Compile Include="Models\Helpers\DropdownHelper.cs" />
+    <Compile Include="Models\ViewModels\CustomerPanelVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

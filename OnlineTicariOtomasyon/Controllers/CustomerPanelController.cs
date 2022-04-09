@@ -1,4 +1,5 @@
 ﻿using OnlineTicariOtomasyon.Models.Classes;
+using OnlineTicariOtomasyon.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace OnlineTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            var vm = new CustomerPanelVM();
+            
             var CustomerId = int.Parse(Session["CustomerId"].ToString());
             var customer = ctx.Customers.Where(x => x.IsActive && x.CustomerId == CustomerId).FirstOrDefault();
             ViewBag.customer = customer;
@@ -25,11 +28,23 @@ namespace OnlineTicariOtomasyon.Controllers
             var totalProduct = ctx.Orders.Where(x => x.IsActive && x.CustomerId == customer.CustomerId).Sum(y => y.Amount).GetValueOrDefault(0);
             ViewBag.totalOrder = totalOrder;
             ViewBag.totalProduct = totalProduct;
-            return View(customer);
-        }
 
+            var orders = ctx.Orders.Where(x => x.IsActive && x.CustomerId == customer.CustomerId).OrderByDescending(x => x.Date).ToList();
+            var messages = ctx.Messages.Where(x => x.IsActive && x.To == customer.Mail).OrderByDescending(x => x.Date).ToList();
+            vm.Customer = customer;
+            vm.Orders = orders;
+            vm.Messages = messages;
+            return View(vm);
+        }
+        [HttpPost]
         public ActionResult Profile(Customer customer)
         {
+            var newCustomer = ctx.Customers.Find(customer.CustomerId);
+            newCustomer.Name = customer.Name;
+            newCustomer.Surname = customer.Surname;
+            newCustomer.Address = customer.Address;
+            newCustomer.Phone = customer.Phone;
+            ctx.SaveChanges();
             return RedirectToAction("Index");
         }
 
