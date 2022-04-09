@@ -115,5 +115,47 @@ namespace OnlineTicariOtomasyon.Models.Helpers
                     }).ToList();
 
         }
+
+        //Cascading kodları
+//        <script>
+
+//    $(function () {
+
+//        $('#DrpSehir').change(function () {
+
+//            var id = $('#DrpSehir').val();
+
+//            $.ajax({
+
+//            url: '/Home/ilcegetir',
+
+//                data: { p: id },
+
+//                type: "POST",
+
+//                dataType: "Json",
+
+//                success: function(data) {
+
+//                    console.log(data);
+
+//                    $('#Drpilce').empty();
+
+//                    for (var i = 0; i < data.length; i++)
+//                    {
+
+//                        $('#Drpilce').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+
+//                    }
+
+//                }
+
+//            });
+
+//        });
+
+//    });
+
+//</script>
     }
 }
