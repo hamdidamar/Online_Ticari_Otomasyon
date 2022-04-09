@@ -54,11 +54,13 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-archive"></i></div>
                             Ürünler
                         </a>
-
-                        <a class="nav-link" href="/Department/Index">
-                            <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
-                            Departmanlar
-                        </a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="nav-link" href="/Department/Index">
+                                <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
+                                Departmanlar
+                            </a>
+                        }
 
                         <a class="nav-link" href="/Customer/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
