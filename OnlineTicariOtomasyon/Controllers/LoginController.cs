@@ -70,5 +70,12 @@ namespace OnlineTicariOtomasyon.Controllers
             }
             return RedirectToAction("Index", "Login");
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
+        }
     }
 }
