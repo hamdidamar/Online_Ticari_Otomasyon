@@ -1,0 +1,32 @@
+# Online_Ticari_Otomasyon
+
+![1](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/8d711357-8ec4-4b99-8748-951ab74fcf4b)
+![2](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/9bb18d07-f0ae-41c3-9e5a-e94efe9c5587)
+![3](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/a46c186f-19a6-4bf6-b94a-9e6da49f0348)
+![4](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/7f53c24a-955f-43e7-9531-d371a67abdd9)
+![5](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/fd7c3307-9188-41e3-8446-6c295ea95ac8)
+![6](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/b33a136d-0fa4-41c7-bac6-9b5b98e0b4df)
+![7](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/ecb5f7f3-c197-4066-aae8-4e2bd02f330d)
+![8](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/f958f0af-3b54-4525-9796-4a6d72bd531d)
+![9](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/c2354868-89cb-4258-bbe0-d40c741c5fad)
+[10](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/62743433-32e0-4d85-ad39-b779f2389166)
+288a15-f38a-4ac9-a763-0f6e093f4552)
+![11](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/97da77dc-bd13-4eef-9864-3a25dd488383)
+![12](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/6440a9a3-fe96-4d35-8ed6-ae4d45b64745)
+![13 (2)](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/fff95a50-3d00-46af-8893-841ebebc4684)
+![14](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/f1e02d7b-4ebe-44b1-88dd-92110625a10a)
+![15](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/c42a67d5-5013-43df-9cea-b27103738176)
+![16](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/ebd5a75f-f572-4020-bea1-2c63cdb18d81)
+![17 (2)](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/812e1e2b-0b9e-467d-84bf-7497d2474938)
+![17](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/02036bae-c88e-4009-91cf-100d5963689b)
+![18](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/76dd40b2-adfe-4951-a8fe-10eec0a943f8)
+![19](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/d4deab4f-0eab-4d74-a1e3-8b6f844b0bcb)
+![20](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/bd330c06-a8c4-4a2b-9d11-eb799dcf39b6)
+![21](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/cc510d62-e837-4eb9-93f4-b9c8230789e4)
+![22](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/53a9e343-a2df-40f2-a8f3-cac103b81f72)
+![23 (2)](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/7749cf31-afdf-4afa-8da8-c4701bd2c26c)
+![24](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/0287fd9d-1778-45a8-92ca-10d8dc0ea218)
+![25](https://github.com/hamdidamar/Online_Ticari_Otomasyon/assets/39102004/49db2a54-d466-4af3-bb3a-0b402540d3b6)
+
+
+
